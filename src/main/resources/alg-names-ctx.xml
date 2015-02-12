@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <util:map key-type="java.lang.String"
+              value-type="io.seldon.clustering.recommender.ItemRecommendationAlgorithm" id="recommendersByLabel">
+        <entry key="MATRIX_FACTOR" value-ref="mfRecommender"/>
+        <entry key="SEMANTIC_VECTORS" value-ref="semanticVectorsRecommender"/>
+        <entry key="TOPIC_MODEL" value-ref="topicModelRecommender"/>
+    </util:map>
+
+    <bean id="mfRecommender" class="io.seldon.mf.MfRecommender">
+        <constructor-arg ref="mfFeaturesManager"/>
+        <constructor-arg>
+            <util:list>
+                <ref bean="mostPopularIncluder"/>
+            </util:list>
+        </constructor-arg>
+        <constructor-arg>
+            <null />
+        </constructor-arg>
+    </bean>
+    <bean id="semanticVectorsRecommender" class="io.seldon.sv.SemanticVectorsRecommender">
+        <constructor-arg ref="semanticVectorsManager"/>
+        <constructor-arg>
+            <util:list>
+                <ref bean="recentItemsIncluder"/>
+            </util:list>
+        </constructor-arg>
+        <constructor-arg>
+            <null />
+        </constructor-arg>
+    </bean>
+    <bean id="topicModelRecommender" class="io.seldon.topics.TopicModelRecommender">
+        <constructor-arg ref="topicFeaturesManager"/>
+        <constructor-arg ref="recentItemsWithTagsManager"/>
+        <constructor-arg>
+            <util:list>
+                <ref bean="mostPopularIncluder"/>
+            </util:list>
+        </constructor-arg>
+        <constructor-arg>
+            <null />
+        </constructor-arg>
+    </bean>
+</beans>
