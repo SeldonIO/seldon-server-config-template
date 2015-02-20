@@ -14,36 +14,12 @@
 
     <bean id="mfRecommender" class="io.seldon.mf.MfRecommender">
         <constructor-arg ref="mfFeaturesManager"/>
-        <constructor-arg>
-            <util:list>
-                <ref bean="mostPopularIncluder"/>
-            </util:list>
-        </constructor-arg>
-        <constructor-arg>
-            <null />
-        </constructor-arg>
     </bean>
     <bean id="semanticVectorsRecommender" class="io.seldon.sv.SemanticVectorsRecommender">
         <constructor-arg ref="semanticVectorsManager"/>
-        <constructor-arg>
-            <util:list>
-                <ref bean="recentItemsIncluder"/>
-            </util:list>
-        </constructor-arg>
-        <constructor-arg>
-            <null />
-        </constructor-arg>
     </bean>
     <bean id="topicModelRecommender" class="io.seldon.topics.TopicModelRecommender">
         <constructor-arg ref="topicFeaturesManager"/>
         <constructor-arg ref="recentItemsWithTagsManager"/>
-        <constructor-arg>
-            <util:list>
-                <ref bean="mostPopularIncluder"/>
-            </util:list>
-        </constructor-arg>
-        <constructor-arg>
-            <null />
-        </constructor-arg>
     </bean>
 </beans>
