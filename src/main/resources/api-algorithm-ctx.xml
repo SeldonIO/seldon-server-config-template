@@ -4,11 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean abstract="true" id="abstract.algorithm.cfAlgorithm" class="io.seldon.trust.impl.CFAlgorithm">
-        <property name="itemComparators">
-            <list>
-                <value>MAHOUT_ITEM</value>
-            </list>
-        </property>
         <property name="recommenders">
             <list>
                 <value>CLUSTER_COUNTS_DYNAMIC</value>
@@ -31,18 +26,6 @@
         <property name="minRating" value="0"/>
         <property name="userCFLimit" value="50"/>
         <property name="transactionActionType" value="0"/>
-                <property name="predictors">
-            <list>
-                <value>WEIGHTED_MEDIAN</value>
-            </list>
-        </property>
-        <property name="predictorStrategy" value="FIRST_SUCCESSFUL"/>
-        <property name="sorters">
-            <list>
-                <value>CLUSTER_COUNTS</value>
-		<value>SEMANTIC_VECTORS</value>
-            </list>
-        </property>
     </bean>
     
       <bean id="algorithm.cfAlgorithm.liveTrustGraph" parent="abstract.algorithm.cfAlgorithm">
