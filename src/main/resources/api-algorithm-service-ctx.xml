@@ -5,7 +5,7 @@
 
     <!-- Define additional algorithms as follows -->
     
-    <bean id="algorithm.cfAlgorithm.testclient" parent="algorithm.cfAlgorithm.liveTrustGraph"/>    
+    <bean id="algorithm.cfAlgorithm.<CLIENT_NAME>" parent="algorithm.cfAlgorithm.liveTrustGraph"/>    
     <bean id="algorithm.service" class="io.seldon.api.AlgorithmServiceImpl">
         <property name="algorithmMap">
             <map>

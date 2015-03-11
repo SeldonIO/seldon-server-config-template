@@ -22,10 +22,6 @@
         <property name="clusterAlgorithm" value="DIMENSION"/>
         <property name="minNumberItemsForValidClusterResult" value="20"/>
         <property name="recentArticlesForSV" value="1000"/>        
-        <property name="maxRating" value="10"/>
-        <property name="minRating" value="0"/>
-        <property name="userCFLimit" value="50"/>
-        <property name="transactionActionType" value="0"/>
     </bean>
     
       <bean id="algorithm.cfAlgorithm.liveTrustGraph" parent="abstract.algorithm.cfAlgorithm">
