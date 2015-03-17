@@ -17,6 +17,6 @@
     minEvictableIdleTimeMillis="60000"
     removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"
     username="<DB_USER>" password="<DB_PWD>" driverClassName="com.mysql.jdbc.ReplicationDriver"
-            url="jdbc:mysql:replication://<DB_HOST>:<DB_PORT>,<DB_USER>:<DB_PORT>/<CLIENT_NAME>?characterEncoding=utf8&amp;useServerPrepStmts=true&amp;logger=com.mysql.jdbc.log.StandardLogger&amp;roundRobinLoadBalance=true&amp;transformedBitIsBoolean=true&amp;rewriteBatchedStatements=true"/>
+            url="jdbc:mysql:replication://<DB_HOST>:<DB_PORT>,<DB_HOST>:<DB_PORT>/<CLIENT_NAME>?characterEncoding=utf8&amp;useServerPrepStmts=true&amp;logger=com.mysql.jdbc.log.StandardLogger&amp;roundRobinLoadBalance=true&amp;transformedBitIsBoolean=true&amp;rewriteBatchedStatements=true"/>
 
 </Context>
